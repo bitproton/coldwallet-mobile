@@ -1,0 +1,728 @@
+@charset "UTF-8";
+@import 'reset';
+@import 'mixins/_card';
+@import 'mixins/_pane';
+@import 'mixins/_monospace';
+@import 'mixins/_form';
+@import 'partials/_main';
+@import 'partials/dashboard/_addresses';
+@import 'partials/dashboard/_transactions';
+@import 'partials/modals';
+@import 'partials/animations';
+@import 'partials/selectproxy';
+
+html, body {
+    background: #f6f6f6;
+    font-size: 15px;
+    height: 100%;
+    width: 100%;
+    font-family: 'Lucida Sans Unicode',Arial,sans-serif;
+}
+
+.container {
+    height: 100%;
+    background: #f6f6f6;
+}
+
+.mainSection {
+	height:100%;
+}
+
+.hide {
+	display:none !important;
+}
+
+/*
+ * http://jsfiddle.net/3h31hx3r/
+ */
+.wallet {
+	@include card(
+		$padding: 0
+	);
+
+	height:100%;
+	display:flex;
+	flex-direction:column;
+}
+
+.wallet__header {
+	flex:none;
+	border-bottom:1px solid #dedede;
+	color:rgba(0,0,0,0.5);
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+}
+
+.wallet__footer {
+	flex:none;
+
+	.actionbar {
+		list-style: none;
+
+		li:not(:nth-last-child(1)):not(:nth-last-child(2)){
+		    border-bottom: 1px solid rgba(255,255,255,0.5);
+		}
+
+		li:nth-child(2n+1) {
+		    border-right: 1px solid rgba(255,255,255,0.5);
+		}
+
+		li {
+			float:left;
+			width:50%;
+		    text-align: center;
+		    background: #002d94;
+		    color: #fff;
+		    padding: 12px;
+		    align-self: stretch;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    align-content: center;
+
+		    .icon {
+		     	font-size: 22px;
+			    margin-bottom: 5px;
+			}
+
+			.label {
+			    font-size: 13px;
+			    line-height: 20px;
+			}
+		}
+	}
+}
+
+.wallet__content {
+	display:flex;
+	flex: 1 1 auto;
+	overflow-y: auto;
+	min-height: 0px;
+}
+
+.wallet__content__in {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+}
+
+.txPreview {
+	width: 100%;
+    display: block;
+    border: 1px solid #dedede;
+    transition: all 0.3s;
+
+    .vin,
+    .vout,
+    .summary {
+    	&:not(:first-child) {
+    		.heading {
+    			border-top:1px solid #dedede;
+    		}
+    	}
+
+    	.heading {
+    		padding: 10px 10px 9px;
+    		background-color:#f6f6f6;
+			border-bottom:1px solid #dedede;
+			font-weight:bold;
+    	}
+    }
+
+    .summary {
+    	.value {
+    		font-weight:bold;
+    	}
+    }
+
+	.vinvoutList {
+		@include monospace;
+		
+		list-style:none;
+		padding: 10px;
+		margin:0;
+		li {
+			display:flex;
+			justify-content:space-between;
+			align-content:center;
+
+			&:not(:last-child){
+				margin-bottom:10px;
+			}
+		}
+
+		.addresses {
+			@include monospace;
+		}
+
+		.value {
+			text-align:right;
+		}
+
+		.highlighted {
+			font-weight:bold;
+		}
+	}
+}
+
+.textareaContainer {
+	position:relative;
+	overflow:hidden;
+
+	.actionButtons {
+		@include monospace;
+
+		position:absolute;
+		bottom:1px;
+		left:1px;
+		background-color:#fafafa;
+		border-style:solid;
+		border-width:1px 1px 0 0;
+		border-color:#dedede;
+		white-space:nowrap;
+		font-size:11px;
+		transition:all 0.2s;
+		list-style:none;
+
+		&:after {
+			content:"";
+			display:table;
+			clear:both;
+		}
+
+		li {
+			float:left;
+
+			&:not(:last-child) {
+			    border-right: 1px solid #e6e6e6;
+			}
+
+			a {
+				display:block;
+				padding:3px;
+
+				&:hover {
+					background-color:rgba(0,0,0,0.05);
+				}
+			}
+		}
+	}
+}
+
+.cleartxhistorybutton {
+	float:right;
+	font-size:11px;
+	cursor:pointer;
+
+	&:hover {
+		text-decoration:underline;
+	}
+}
+
+.logo {
+	margin:12px 18px;
+
+	img {
+		max-height:10px;
+		max-width:100%;
+	}
+}
+
+.modal__transaction {
+	@include pane(
+		$prefix: 'modal__transaction',
+		$contentPadding: 18px
+	);
+	@include card(
+		$padding: 0
+	);
+
+	width:960px;
+	margin:18px;
+	font-size:13px;
+
+	.modalCloseButton {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    padding: 12px;
+	    cursor: pointer;
+	    font-weight: bold;
+	    font-size: 12px;
+
+	    &:hover {
+	    	background-color:rgba(255,255,255,0.1);
+	    }
+	}
+
+	.modal__transaction__header {
+		background-color:#0057e5;
+		color:#fff;
+		border:none;
+		position:relative;
+	}
+}
+
+.modal__setPasswordForm__form,
+.modal__changePasswordForm__form,
+.modal__unlockForm__form {
+	@include form--std(
+		$sectionMargin: 18px
+	);
+}
+
+.modal__about {
+    font-size: 14px;
+    line-height: 1.33;
+
+	p {
+		&:not(:last-child){
+			margin-bottom:18px;
+		}
+
+		a {
+			color:#0057E5;
+
+			&:hover {
+				text-decoration:underline;
+			}
+		}
+	}
+}
+
+.wallet__tx__actionbar {
+	flex: none;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 12px 18px;
+    border-bottom: 1px solid #dedede;
+}
+
+.wallet__tabselector {
+	flex:none;
+	display:flex;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.3);
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	border-bottom: 1px solid #dedede;
+
+	a {
+		flex:1;
+		flex-grow:1;
+		padding: 12px 18px;
+		width:50%;
+		display:block;
+		text-align:center;
+
+		&:not(:last-child){
+			border-right:1px solid #e8e8e8;
+		}
+
+		&.active {
+			color:#0057E5;
+		}
+	}
+}
+
+.modal__addressDetails {
+	@include pane(
+		$prefix: 'modal__addressDetails',
+		$contentPadding: 18px
+	);
+	@include card(
+		$padding: 0
+	);
+
+	width:100%;
+	font-size:13px;
+	margin:0;
+
+	.modal__addressDetails__header {
+		background-color:#0057e5;
+		color:#fff;
+		border:none;
+		position:relative;
+	}
+
+	.modalCloseButton {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    padding: 12px;
+	    cursor: pointer;
+	    font-weight: bold;
+	    font-size: 12px;
+
+	    &:hover {
+	    	background-color:rgba(255,255,255,0.1);
+	    }
+	}
+
+	.addressDetailsForm {
+		@include form--std(
+			$sectionMargin: 18px
+		);
+	}
+
+	.qrCodeWrapper {
+		text-align:center;
+		margin-bottom:18px;
+
+		a {
+			display:inline-block;
+		}
+	}
+
+	.inputContainer {
+		position:relative;
+	}
+
+	.inputAppendixButton {
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		width:33px;
+		text-align:center;
+		background-color: #0057E5;
+    	color: #fff;
+    	line-height:33px;
+    	display:block;
+    	cursor:pointer;
+    	z-index:1;
+
+    	&:hover {
+    		background-color:lighten(#0057E5, 10%);
+    	}
+    }
+}
+
+.modal__newAddress {
+	@include pane(
+		$prefix: 'modal__newAddress',
+		$contentPadding: 0
+	);
+	@include card(
+		$padding: 0
+	);
+
+	width:100%;
+	font-size:13px;
+	margin:0;
+
+	.modalCloseButton {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    padding: 12px;
+	    cursor: pointer;
+	    font-weight: bold;
+	    font-size: 12px;
+
+	    &:hover {
+	    	background-color:rgba(255,255,255,0.1);
+	    }
+	}
+
+	.modal__newAddress__header {
+		background-color:#0057e5;
+		color:#fff;
+		border:none;
+		position:relative;
+	}
+}
+
+.modal__newAddress__form {
+	@include form--std;
+
+	.inputContainer {
+		position:relative;
+	}
+
+	.inputAppendixButton {
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		width:33px;
+		text-align:center;
+		background-color: #0057E5;
+    	color: #fff;
+    	line-height:33px;
+    	display:block;
+    	cursor:pointer;
+    	z-index:1;
+
+    	&:hover {
+    		background-color:lighten(#0057E5, 10%);
+    	}
+	}
+
+	.multisigKeysFieldsetCollection {
+		padding: 18px;
+	    border: 1px solid lighten(#0057e5, 50%);
+
+	    legend {
+    	    color: #002;
+		    padding: 0 10px;
+		    font-size: 13px;
+		    font-weight: bold;
+	    	display:block;
+		}
+		
+		.form-group-collection {
+			counter-reset: section;
+
+			> li {
+				list-style-type: none;
+				position:relative;
+			}
+		}
+	}
+}
+
+.typeSelectElementProxy {
+    .icon {
+	    line-height:31px;
+	}
+}
+
+.modal__txSignForm {
+	@include pane(
+		$prefix: 'modal__txSignForm',
+		$contentPadding: 0 !important
+	);
+	@include card(
+		$padding: 0
+	);
+
+	width:100%;
+	font-size:13px;
+	margin:0;
+
+	.modal--std__content {
+		padding:0 !important;
+	}
+
+	.modal__txSignForm__header {
+		background-color:#0057e5;
+		color:#fff;
+		border:none;
+		position:relative;
+	}
+
+	.modalCloseButton {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    padding: 12px;
+	    cursor: pointer;
+	    font-weight: bold;
+	    font-size: 12px;
+
+	    &:hover {
+	    	background-color:rgba(255,255,255,0.1);
+	    }
+	}
+
+	.signTransactionForm {
+		@include form--std(
+			$sectionMargin: 18px
+		);
+
+		padding:18px;
+	}
+
+	.stepsbar {
+		.breadcrumbs {
+			list-style:none;
+			font-size:14px;
+			box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+			padding:0 18px;
+
+			&:after {
+				content:"";
+				clear:both;
+				display:table;
+			}
+
+			li {
+				float:left;
+				opacity:0.5;
+				transition: all 0.2s;
+
+				// &:hover,
+				&.active {
+					opacity:1;
+				}
+
+				&:not(:last-child){
+					margin-right:12px;
+
+					a:after {
+					    content: "\2192";
+					    float: right;
+					    margin-left: 12px;
+					    color: rgba(0, 45, 148, 0.5);
+					}
+				}
+
+				a {
+					cursor:default;
+				    font-weight: bold;
+				    display:block;
+				    padding:14px 0;
+				    color:#002d94;
+				}
+			}
+		}
+	}
+
+	.steps__content {
+		width:100%;
+		max-width:100%;
+		position: relative;
+		overflow:hidden;
+	}
+
+	.steps__slider {
+		position:relative;
+		white-space:nowrap;
+		transition:all 0.2s;
+		left:0%;
+
+		&.signed {
+			left:-100%;
+		}
+	}
+
+	.step__content {
+		width:100%;
+		display:inline-block;
+		vertical-align:top;
+		white-space:initial;
+
+		&.discard {
+			height:1px;
+			overflow:hidden;
+		}
+	}
+
+	.actionbar .right {
+		text-align:right;
+	}
+
+	.userCheckList {
+		list-style:none;
+
+		li {
+			border-style:solid;
+			border-color:#dedede;
+			border-width:1px 1px 0 1px;
+
+			&:last-child{
+				border-bottom-width:1px;
+			}
+		}
+
+	    label {
+	    	cursor:pointer;
+	    }
+
+		.header {
+			background-color: #f6f6f6;
+		    border-bottom: 1px solid #dedede;
+		    display: flex;
+		    align-items:center;
+		    font-weight: bold;
+		}
+
+		.id {
+			padding: 10px;
+		    border-right: 1px solid #dedede;
+		    border-radius: 50%;
+		}
+
+		.title {
+			padding: 10px;
+			flex-grow:1;
+		}
+
+		.checkbox {
+			padding:10px;
+
+			[type="checkbox"]{
+				margin:0;
+				padding:0;
+			}
+		}
+
+		.content {
+		    padding: 10px;
+		    border-top: 0;
+		    max-height:320px;
+		    transition:padding 0.2s, max-height 0.2s, height 0.2s, border 0.2s;
+		    white-space: initial;
+		    line-height: 1.5;
+		    border-bottom: none;
+		    overflow:auto;
+
+		    a {
+		    	color:#002d94;
+
+		    	&:hover {
+		    		text-decoration:underline;
+		    	}
+		    }
+
+		    kbd, 
+		    mark {
+		    	background-color: #f6f6f6;
+			    border: 1px solid #dedede;
+			    padding: 1px 3px;
+			    border-radius: 2px;
+			    font-weight: bold;
+		    }
+
+		    p {
+		    	&:not(:last-child){
+		    		margin-bottom:10px;
+		    	}
+
+		    	&.note {
+		    		color:rgba(0,0,0,0.5);
+		    		border-left: 2px solid #dedede;
+				    padding-left: 10px;
+				    padding-right: 20px;
+		    	}
+		    }
+		}
+
+		li.completed {
+			.content {
+				max-height:0;
+				padding-top:0;
+				padding-bottom:0;
+				overflow:hidden;
+			}
+
+			.title {
+				text-decoration:line-through;
+			}
+				
+			.header {
+				border-bottom:none;
+			}
+
+			&:not(:last-child){
+				border-bottom:none;
+			}
+		}
+	}
+}

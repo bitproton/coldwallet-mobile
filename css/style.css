@@ -1,0 +1,2027 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+  height: 100%;
+  font-size: 16px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse; }
+
+.hide {
+  display: none !important; }
+
+database,
+.database,
+initialdata,
+.initialdata {
+  display: none !important; }
+
+.notice {
+  border-left-width: 3px;
+  border-left-style: solid;
+  line-height: 1.65; }
+  .notice:first-line {
+    line-height: 1; }
+  .notice:not(.multiline) {
+    padding: 10px; }
+  .notice.multiline {
+    line-height: 1.5;
+    padding: 5px 10px; }
+  .notice .lead {
+    font-size: 18px; }
+  .notice.wIcon {
+    display: flex;
+    align-items: center; }
+    .notice.wIcon .icon {
+      font-size: 40px;
+      margin-right: 12px; }
+  .notice .secondary {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 14px; }
+  .notice--green {
+    border-color: #00E557;
+    background-color: #f6fff6; }
+    .notice--green .lead,
+    .notice--green .icon {
+      color: #0b7333; }
+  .notice--yellow {
+    border-color: #FDD835;
+    background-color: rgba(253, 216, 53, 0.12); }
+  .notice--orange {
+    border-color: #ff9900;
+    background-color: rgba(255, 153, 0, 0.25); }
+  .notice--red {
+    border-color: #e50000;
+    background-color: #fff6f6; }
+  .notice a {
+    color: #002d94; }
+    .notice a:hover {
+      text-decoration: underline; }
+
+.formStd {
+  font-size: inherit; }
+  .formStd fieldset .form-group-collection {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .formStd fieldset.state--multichild .form-group-collection > li:not(:last-child) {
+    margin-bottom: 12px; }
+  .formStd fieldset.state--multichild .form-group:not(:last-child) {
+    margin-bottom: 4px; }
+  .formStd fieldset.state--multichild .advice {
+    top: -2px; }
+  .formStd .form-group:not(:last-child) {
+    margin-bottom: 12px; }
+  .formStd .form-group:not(.wAppendix) .row > .left {
+    width: 100%; }
+  .formStd .form-group:not(.wAppendix) .row > .right {
+    width: 100%; }
+  .formStd .form-group.wAppendix .row > .left {
+    width: 100%; }
+  .formStd .form-group.wAppendix .row > .right {
+    width: 100%; }
+  .formStd .form-group.wAppendix .row > .appendix {
+    width: 20%;
+    padding-left: 12px; }
+  .formStd .form-group [type="checkbox"] {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .formStd .form-group .inputContainer > input {
+    padding-right: 40px !important; }
+  .formStd .form-group .input[readonly] .asis,
+  .formStd .form-group .input[disabled] .asis {
+    cursor: text; }
+  .formStd .form-group .input[readonly]:not(.asis),
+  .formStd .form-group .input[disabled]:not(.asis) {
+    background-color: #f6f6f6;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: default; }
+    .formStd .form-group .input[readonly]:not(.asis):focus,
+    .formStd .form-group .input[disabled]:not(.asis):focus {
+      border-color: #888; }
+  .formStd .button {
+    line-height: 1;
+    border: none;
+    outline: none;
+    box-shadow: none; }
+    .formStd .button--primary {
+      background-color: #0057E5;
+      color: #fff; }
+      .formStd .button--primary:hover, .formStd .button--primary:focus {
+        background-color: #1970ff; }
+  .formStd .label,
+  .formStd .input {
+    font-size: 100%; }
+  .formStd .label {
+    line-height: 1;
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 10px;
+    background-color: #f6f6f6;
+    font-weight: bold;
+    color: #002; }
+    .formStd .label.align-left {
+      text-align: left; }
+    .formStd .label.align-right {
+      text-align: right; }
+  .formStd .input {
+    line-height: 115%;
+    width: 100%;
+    display: block;
+    padding: 8px;
+    border: 1px solid #dedede;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s; }
+    .formStd .input:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: #0057E5; }
+    .formStd .input.hidden {
+      display: none; }
+  .formStd textarea {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 5em;
+    max-height: 320px; }
+  .formStd fieldset:not(:last-child) {
+    margin-bottom: 12px; }
+  .formStd select.input {
+    padding: 7px 8px; }
+  .formStd .input--checkbox {
+    margin: 1px 8px 1px 0; }
+  .formStd .button {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer; }
+    .formStd .button--block {
+      display: block;
+      width: 100%; }
+  .formStd .helper-block {
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.5; }
+    .formStd .helper-block:first-line {
+      line-height: 1; }
+    .formStd .helper-block p:not(:last-child) {
+      margin-bottom: 0.5em; }
+    .formStd .helper-block a {
+      color: #66a0ff; }
+      .formStd .helper-block a:hover {
+        text-decoration: underline; }
+  .formStd .notice:not(:last-child) {
+    margin-bottom: 12px; }
+
+.flash-notice {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-left-width: 3px;
+  border-left-style: solid; }
+  .flash-notice--success {
+    border-color: #00E557;
+    background-color: #f6fff6; }
+  .flash-notice--error {
+    border-color: #E50057;
+    background-color: #fff6f6; }
+
+.adviceRow:empty {
+  display: none; }
+
+.advice {
+  margin-top: 12px;
+  font-size: 12px;
+  padding: 8px;
+  position: relative;
+  background-color: #dedede;
+  transition: all 0.2s; }
+  .advice:before {
+    content: "";
+    border-color: transparent transparent #dedede transparent;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    top: -8px;
+    content: "";
+    display: block;
+    left: 20px;
+    position: absolute;
+    width: 0;
+    transition: all 0.2s; }
+  .advice--green {
+    background-color: #009000;
+    color: #fff; }
+    .advice--green:before {
+      border-bottom-color: #009000; }
+  .advice--blue {
+    background-color: #0057E5;
+    color: #fff; }
+    .advice--blue:before {
+      border-bottom-color: #0057E5; }
+  .advice--red {
+    background-color: #c91400;
+    color: #fff; }
+    .advice--red:before {
+      border-bottom-color: #c91400; }
+  .advice p {
+    margin-bottom: 8px; }
+
+.adviceList {
+  list-style: none; }
+  .adviceList li:not(:last-child) {
+    margin-bottom: 6px; }
+  .adviceList li:not(:only-child):before {
+    content: "\2022";
+    margin-right: 6px; }
+  .adviceList li:only-child:before {
+    content: none; }
+
+.wallet__addresses {
+  flex: auto;
+  overflow-y: auto;
+  min-height: 0px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+  .wallet__addresses .actionbar {
+    transition: all 0.2s;
+    text-align: left; }
+    .wallet__addresses .actionbar .button {
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      padding: 3px 8px;
+      line-height: 1.5;
+      border-radius: 2px;
+      box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.35);
+      opacity: 0.5;
+      transition: all 0.2s; }
+      .wallet__addresses .actionbar .button:hover {
+        opacity: 1; }
+      .wallet__addresses .actionbar .button--blue {
+        background-color: #0057E5; }
+        .wallet__addresses .actionbar .button--blue:hover {
+          background-color: #003dc7; }
+      .wallet__addresses .actionbar .button--red {
+        background-color: #772200; }
+        .wallet__addresses .actionbar .button--red:hover {
+          background-color: #c73d00; }
+
+.wallet__addresses__header {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px; }
+
+.addressCollection {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -2px; }
+
+.addressCard {
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+  background-color: #fff;
+  padding: 18px; }
+  .addressCard:hover {
+    background-color: #f6f6f6; }
+
+.addressCard__left .addressLabel {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.75); }
+.addressCard__left .addressAddress {
+  font-family: Consolas, 'Courier New', monospace;
+  color: rgba(0, 0, 0, 0.5); }
+
+.addressCard__right {
+  margin-top: 18px; }
+
+.addresses__content {
+  flex: 1;
+  overflow-y: scroll;
+  position: relative;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0px; }
+
+.addressCollectionSectionIfEmpty {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  margin-top: -0.5em;
+  color: rgba(0, 0, 0, 0.5); }
+  .addressCollectionSectionIfEmpty a {
+    color: #0057E5; }
+    .addressCollectionSectionIfEmpty a:hover {
+      text-decoration: underline; }
+
+.wallet__transactions {
+  flex: auto;
+  overflow-y: scroll;
+  min-height: 0px;
+  position: relative; }
+  .wallet__transactions .loadmoreButtonContainer {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    color: #002d94; }
+  .wallet__transactions .loadMoreButton {
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold; }
+
+.transactionCard {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #dedede;
+  background-color: #fff;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 13px; }
+  .transactionCard:hover {
+    background-color: #f6f6f6; }
+
+.transactions__broadcastedTransactions {
+  border-style: double;
+  border-width: 3px 0;
+  border-color: #FF9900;
+  border: none; }
+
+.transactionCard__date {
+  font-family: Consolas, 'Courier New', monospace;
+  text-align: center;
+  padding: 6px;
+  background-color: #fafafa;
+  border-right: 1px solid #dedede;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.75);
+  flex: none;
+  display: flex;
+  align-items: center; }
+
+.transactionCard__details {
+  padding: 6px;
+  align-content: center;
+  flex: auto;
+  display: flex;
+  align-items: center; }
+  .transactionCard__details .heading {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.5);
+    flex-grow: 1; }
+
+.transactionCard__valueDetails {
+  padding: 6px;
+  text-align: right;
+  flex: none;
+  display: flex;
+  align-items: center; }
+  .transactionCard__valueDetails .base {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.75); }
+  .transactionCard__valueDetails.positive .base {
+    color: #4bad02; }
+  .transactionCard__valueDetails.negative .base {
+    color: #ad0202; }
+
+.transactionsSectionIfEmpty {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  margin-top: -0.5em;
+  color: rgba(0, 0, 0, 0.5); }
+  .transactionsSectionIfEmpty a {
+    color: #0057E5; }
+    .transactionsSectionIfEmpty a:hover {
+      text-decoration: underline; }
+
+body.mmModal--active {
+  overflow: hidden !important; }
+
+.mmModal__wrapper {
+  position: relative;
+  display: none;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 97;
+  position: fixed; }
+  .mmModal__wrapper.active {
+    display: block; }
+
+.mmModal__overlay {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.2s;
+  cursor: pointer; }
+
+.mmModal--noverticalalign .mmModal__overlay:before {
+  display: none; }
+
+.mmModal {
+  -webkit-animation: fadeInDownMini 150ms ease-out 0s 1 normal;
+  -moz-animation: fadeInDownMini 150ms ease-out 0s 1 normal;
+  -o-animation: fadeInDownMini 150ms ease-out 0s 1 normal;
+  animation: fadeInDownMini 150ms ease-out 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: relative;
+  display: block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: initial;
+  z-index: 91;
+  cursor: default; }
+
+.modal--std {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 100%;
+  margin: 0;
+  font-size: 13px; }
+  .modal--std .modal--std__header {
+    padding: 12px 18px;
+    border-bottom: 1px solid #dedede;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px; }
+  .modal--std .modal--std__content {
+    padding: 18px; }
+  .modal--std .lead {
+    font-size: 14px;
+    margin-bottom: 12px; }
+  .modal--std .modal--std__header {
+    background-color: #0057e5;
+    color: #fff;
+    border: none;
+    position: relative; }
+  .modal--std .modalCloseButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px; }
+    .modal--std .modalCloseButton:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .modal--std .actionbar:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .modal--std .actionbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .modal--std .actionbar ul:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .modal--std .actionbar ul.left {
+      float: left; }
+    .modal--std .actionbar ul.right {
+      float: right; }
+    .modal--std .actionbar ul li {
+      float: left; }
+      .modal--std .actionbar ul li:not(:last-child) {
+        margin-right: 6px; }
+      .modal--std .actionbar ul li a {
+        font-weight: bold;
+        display: block;
+        background-color: #0057E5;
+        color: #fff;
+        padding: 4px 8px 3px 8px;
+        line-height: 1.5;
+        border-radius: 2px;
+        transition: all 0.2s;
+        box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.35); }
+        .modal--std .actionbar ul li a:hover {
+          background-color: #003dc7; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); } }
+@-moz-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); } }
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); } }
+@-webkit-keyframes fadeInDownMini {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-moz-keyframes fadeInDownMini {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fadeInDownMini {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes fadeOutUpMini {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); } }
+@-moz-keyframes fadeOutUpMini {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); } }
+@keyframes fadeOutUpMini {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); } }
+@-webkit-keyframes fadeOutUpMini {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); } }
+@-moz-keyframes fadeOutUpMini {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); } }
+@keyframes fadeOutUpMini {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0); } }
+@-webkit-keyframes fadeInRightMini {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3px, 0, 0);
+    transform: translate3d(-3px, 0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-moz-keyframes fadeInRightMini {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3px, 0, 0);
+    transform: translate3d(-3px, 0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fadeInRightMini {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3px, 0, 0);
+    transform: translate3d(-3px, 0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes fadeInLeftMini {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(3px, 0, 0);
+    transform: translate3d(3px, 0, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.pageHeader {
+  background-color: #002d94;
+  color: #fff;
+  position: relative;
+  z-index: 20; }
+
+.pageHeader .pageHeader__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.pageHeader .logo {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  user-select: none; }
+
+.pageHeader .logo a {
+  display: block;
+  padding: 15px 0; }
+
+.pageHeader .logo img {
+  height: 10px;
+  display: block; }
+
+.pageHeader .account .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.pageHeader .account .menu:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.pageHeader .account .menu > li {
+  float: left;
+  position: relative; }
+
+.pageHeader .account .menu > li > a {
+  display: block;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: .2s; }
+
+.pageHeader .account .menu > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.05); }
+
+.pageHeader .account .menu > li.open > a {
+  background-color: rgba(255, 255, 255, 0.1); }
+
+.pageHeader .account .menu > li > ul {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  border: 1px solid #e2e2e2;
+  border-bottom: 0;
+  position: absolute;
+  z-index: 9;
+  display: none;
+  background: #fff;
+  min-width: 220px;
+  max-width: 440px;
+  left: 50%;
+  margin: 0;
+  margin-left: -110px;
+  -webkit-animation: fadeInDown 150ms ease-out 0s 1 normal;
+  -moz-animation: fadeInDown 150ms ease-out 0s 1 normal;
+  -o-animation: fadeInDown 150ms ease-out 0s 1 normal;
+  animation: fadeInDown 150ms ease-out 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  color: #292d2e;
+  margin-top: 8px; }
+
+.selectElementProxy {
+  border: 1px solid #dedede;
+  position: relative;
+  z-index: 9;
+  user-select: none;
+  transition: all 0.2s; }
+  .selectElementProxy.state--open:not(.reversed) {
+    border-top-color: #0057E5;
+    border-right-color: #0057E5;
+    border-left-color: #0057E5; }
+  .selectElementProxy.state--open.reversed {
+    border-bottom-color: #0057E5;
+    border-right-color: #0057E5;
+    border-left-color: #0057E5; }
+  .selectElementProxy.state--open .optionsContainerPositioner--relative {
+    position: relative; }
+  .selectElementProxy.state--open .optionsContainerPositioner--fixed {
+    position: fixed;
+    overflow: visible;
+    background-color: #fff; }
+  .selectElementProxy.state--open .optionsContainer {
+    z-index: 99;
+    visibility: visible;
+    border-color: #0057E5;
+    height: initial;
+    overflow: initial; }
+  .selectElementProxy.state--open .icon {
+    background-color: #f6f6f6; }
+  .selectElementProxy.state--open .front {
+    opacity: 0.5; }
+  .selectElementProxy .optionsContainer {
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -99;
+    border-style: solid;
+    border-color: #dedede;
+    background-color: #fff;
+    visibility: hidden;
+    transition: border-color 0.2s; }
+    .selectElementProxy .optionsContainer .header {
+      background-color: #f6f6f6;
+      padding: 6px 10px;
+      color: rgba(0, 0, 0, 0.25);
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      border-top: 1px solid #dedede;
+      border-bottom: 1px solid #dedede; }
+  .selectElementProxy:not(.reversed) .optionsContainer {
+    top: 100%;
+    border-width: 0 1px 1px 1px; }
+  .selectElementProxy.reversed .optionsContainer {
+    bottom: 100%;
+    border-width: 1px 1px 0 1px; }
+  .selectElementProxy .option {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 9px 10px;
+    cursor: pointer; }
+    .selectElementProxy .option.front {
+      transition: opacity 0.2s; }
+    .selectElementProxy .option:not(.front):hover {
+      background-color: #0057e5;
+      color: #fff; }
+    .selectElementProxy .option:not(.front):not(:last-child) {
+      border-bottom: 1px solid #dedede; }
+      .selectElementProxy .option:not(.front):not(:last-child):hover {
+        border-color: #0057e5; }
+    .selectElementProxy .option .icon {
+      width: 17px;
+      border-left: 1px solid #dedede;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      text-align: center; }
+  .selectElementProxy.reversed .option:not(.front) {
+    border-bottom: 1px solid #dedede; }
+    .selectElementProxy.reversed .option:not(.front):hover {
+      border-color: #0057e5; }
+  .selectElementProxy:hover .icon {
+    background-color: #fafafa; }
+
+html, body {
+  background: #f6f6f6;
+  font-size: 15px;
+  height: 100%;
+  width: 100%;
+  font-family: 'Lucida Sans Unicode',Arial,sans-serif; }
+
+.container {
+  height: 100%;
+  background: #f6f6f6; }
+
+.mainSection {
+  height: 100%; }
+
+.hide {
+  display: none !important; }
+
+/*
+ * http://jsfiddle.net/3h31hx3r/
+ */
+.wallet {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.wallet__header {
+  flex: none;
+  border-bottom: 1px solid #dedede;
+  color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.wallet__footer {
+  flex: none; }
+  .wallet__footer .actionbar {
+    list-style: none; }
+    .wallet__footer .actionbar li:not(:nth-last-child(1)):not(:nth-last-child(2)) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+    .wallet__footer .actionbar li:nth-child(2n+1) {
+      border-right: 1px solid rgba(255, 255, 255, 0.5); }
+    .wallet__footer .actionbar li {
+      float: left;
+      width: 50%;
+      text-align: center;
+      background: #002d94;
+      color: #fff;
+      padding: 12px;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center; }
+      .wallet__footer .actionbar li .icon {
+        font-size: 22px;
+        margin-bottom: 5px; }
+      .wallet__footer .actionbar li .label {
+        font-size: 13px;
+        line-height: 20px; }
+
+.wallet__content {
+  display: flex;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0px; }
+
+.wallet__content__in {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.txPreview {
+  width: 100%;
+  display: block;
+  border: 1px solid #dedede;
+  transition: all 0.3s; }
+  .txPreview .vin:not(:first-child) .heading,
+  .txPreview .vout:not(:first-child) .heading,
+  .txPreview .summary:not(:first-child) .heading {
+    border-top: 1px solid #dedede; }
+  .txPreview .vin .heading,
+  .txPreview .vout .heading,
+  .txPreview .summary .heading {
+    padding: 10px 10px 9px;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #dedede;
+    font-weight: bold; }
+  .txPreview .summary .value {
+    font-weight: bold; }
+  .txPreview .vinvoutList {
+    font-family: Consolas, 'Courier New', monospace;
+    list-style: none;
+    padding: 10px;
+    margin: 0; }
+    .txPreview .vinvoutList li {
+      display: flex;
+      justify-content: space-between;
+      align-content: center; }
+      .txPreview .vinvoutList li:not(:last-child) {
+        margin-bottom: 10px; }
+    .txPreview .vinvoutList .addresses {
+      font-family: Consolas, 'Courier New', monospace; }
+    .txPreview .vinvoutList .value {
+      text-align: right; }
+    .txPreview .vinvoutList .highlighted {
+      font-weight: bold; }
+
+.textareaContainer {
+  position: relative;
+  overflow: hidden; }
+  .textareaContainer .actionButtons {
+    font-family: Consolas, 'Courier New', monospace;
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    background-color: #fafafa;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    border-color: #dedede;
+    white-space: nowrap;
+    font-size: 11px;
+    transition: all 0.2s;
+    list-style: none; }
+    .textareaContainer .actionButtons:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .textareaContainer .actionButtons li {
+      float: left; }
+      .textareaContainer .actionButtons li:not(:last-child) {
+        border-right: 1px solid #e6e6e6; }
+      .textareaContainer .actionButtons li a {
+        display: block;
+        padding: 3px; }
+        .textareaContainer .actionButtons li a:hover {
+          background-color: rgba(0, 0, 0, 0.05); }
+
+.cleartxhistorybutton {
+  float: right;
+  font-size: 11px;
+  cursor: pointer; }
+  .cleartxhistorybutton:hover {
+    text-decoration: underline; }
+
+.logo {
+  margin: 12px 18px; }
+  .logo img {
+    max-height: 10px;
+    max-width: 100%; }
+
+.modal__transaction {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 960px;
+  margin: 18px;
+  font-size: 13px; }
+  .modal__transaction .modal__transaction__header {
+    padding: 12px 18px;
+    border-bottom: 1px solid #dedede;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px; }
+  .modal__transaction .modal__transaction__content {
+    padding: 18px; }
+  .modal__transaction .modalCloseButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px; }
+    .modal__transaction .modalCloseButton:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .modal__transaction .modal__transaction__header {
+    background-color: #0057e5;
+    color: #fff;
+    border: none;
+    position: relative; }
+
+.modal__setPasswordForm__form,
+.modal__changePasswordForm__form,
+.modal__unlockForm__form {
+  font-size: inherit; }
+  .modal__setPasswordForm__form fieldset .form-group-collection,
+  .modal__changePasswordForm__form fieldset .form-group-collection,
+  .modal__unlockForm__form fieldset .form-group-collection {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .modal__setPasswordForm__form fieldset.state--multichild .form-group-collection > li:not(:last-child),
+  .modal__changePasswordForm__form fieldset.state--multichild .form-group-collection > li:not(:last-child),
+  .modal__unlockForm__form fieldset.state--multichild .form-group-collection > li:not(:last-child) {
+    margin-bottom: 18px; }
+  .modal__setPasswordForm__form fieldset.state--multichild .form-group:not(:last-child),
+  .modal__changePasswordForm__form fieldset.state--multichild .form-group:not(:last-child),
+  .modal__unlockForm__form fieldset.state--multichild .form-group:not(:last-child) {
+    margin-bottom: 6px; }
+  .modal__setPasswordForm__form fieldset.state--multichild .advice,
+  .modal__changePasswordForm__form fieldset.state--multichild .advice,
+  .modal__unlockForm__form fieldset.state--multichild .advice {
+    top: -3px; }
+  .modal__setPasswordForm__form .form-group:not(:last-child),
+  .modal__changePasswordForm__form .form-group:not(:last-child),
+  .modal__unlockForm__form .form-group:not(:last-child) {
+    margin-bottom: 18px; }
+  .modal__setPasswordForm__form .form-group:not(.wAppendix) .row > .left,
+  .modal__changePasswordForm__form .form-group:not(.wAppendix) .row > .left,
+  .modal__unlockForm__form .form-group:not(.wAppendix) .row > .left {
+    width: 100%; }
+  .modal__setPasswordForm__form .form-group:not(.wAppendix) .row > .right,
+  .modal__changePasswordForm__form .form-group:not(.wAppendix) .row > .right,
+  .modal__unlockForm__form .form-group:not(.wAppendix) .row > .right {
+    width: 100%; }
+  .modal__setPasswordForm__form .form-group.wAppendix .row > .left,
+  .modal__changePasswordForm__form .form-group.wAppendix .row > .left,
+  .modal__unlockForm__form .form-group.wAppendix .row > .left {
+    width: 100%; }
+  .modal__setPasswordForm__form .form-group.wAppendix .row > .right,
+  .modal__changePasswordForm__form .form-group.wAppendix .row > .right,
+  .modal__unlockForm__form .form-group.wAppendix .row > .right {
+    width: 100%; }
+  .modal__setPasswordForm__form .form-group.wAppendix .row > .appendix,
+  .modal__changePasswordForm__form .form-group.wAppendix .row > .appendix,
+  .modal__unlockForm__form .form-group.wAppendix .row > .appendix {
+    width: 20%;
+    padding-left: 12px; }
+  .modal__setPasswordForm__form .form-group [type="checkbox"],
+  .modal__changePasswordForm__form .form-group [type="checkbox"],
+  .modal__unlockForm__form .form-group [type="checkbox"] {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .modal__setPasswordForm__form .form-group .inputContainer > input,
+  .modal__changePasswordForm__form .form-group .inputContainer > input,
+  .modal__unlockForm__form .form-group .inputContainer > input {
+    padding-right: 40px !important; }
+  .modal__setPasswordForm__form .form-group .input[readonly] .asis,
+  .modal__setPasswordForm__form .form-group .input[disabled] .asis,
+  .modal__changePasswordForm__form .form-group .input[readonly] .asis,
+  .modal__changePasswordForm__form .form-group .input[disabled] .asis,
+  .modal__unlockForm__form .form-group .input[readonly] .asis,
+  .modal__unlockForm__form .form-group .input[disabled] .asis {
+    cursor: text; }
+  .modal__setPasswordForm__form .form-group .input[readonly]:not(.asis),
+  .modal__setPasswordForm__form .form-group .input[disabled]:not(.asis),
+  .modal__changePasswordForm__form .form-group .input[readonly]:not(.asis),
+  .modal__changePasswordForm__form .form-group .input[disabled]:not(.asis),
+  .modal__unlockForm__form .form-group .input[readonly]:not(.asis),
+  .modal__unlockForm__form .form-group .input[disabled]:not(.asis) {
+    background-color: #f6f6f6;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: default; }
+    .modal__setPasswordForm__form .form-group .input[readonly]:not(.asis):focus,
+    .modal__setPasswordForm__form .form-group .input[disabled]:not(.asis):focus,
+    .modal__changePasswordForm__form .form-group .input[readonly]:not(.asis):focus,
+    .modal__changePasswordForm__form .form-group .input[disabled]:not(.asis):focus,
+    .modal__unlockForm__form .form-group .input[readonly]:not(.asis):focus,
+    .modal__unlockForm__form .form-group .input[disabled]:not(.asis):focus {
+      border-color: #888; }
+  .modal__setPasswordForm__form .button,
+  .modal__changePasswordForm__form .button,
+  .modal__unlockForm__form .button {
+    line-height: 1;
+    border: none;
+    outline: none;
+    box-shadow: none; }
+    .modal__setPasswordForm__form .button--primary,
+    .modal__changePasswordForm__form .button--primary,
+    .modal__unlockForm__form .button--primary {
+      background-color: #0057E5;
+      color: #fff; }
+      .modal__setPasswordForm__form .button--primary:hover, .modal__setPasswordForm__form .button--primary:focus,
+      .modal__changePasswordForm__form .button--primary:hover,
+      .modal__changePasswordForm__form .button--primary:focus,
+      .modal__unlockForm__form .button--primary:hover,
+      .modal__unlockForm__form .button--primary:focus {
+        background-color: #1970ff; }
+  .modal__setPasswordForm__form .label,
+  .modal__setPasswordForm__form .input,
+  .modal__changePasswordForm__form .label,
+  .modal__changePasswordForm__form .input,
+  .modal__unlockForm__form .label,
+  .modal__unlockForm__form .input {
+    font-size: 100%; }
+  .modal__setPasswordForm__form .label,
+  .modal__changePasswordForm__form .label,
+  .modal__unlockForm__form .label {
+    line-height: 1;
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 10px;
+    background-color: #f6f6f6;
+    font-weight: bold;
+    color: #002; }
+    .modal__setPasswordForm__form .label.align-left,
+    .modal__changePasswordForm__form .label.align-left,
+    .modal__unlockForm__form .label.align-left {
+      text-align: left; }
+    .modal__setPasswordForm__form .label.align-right,
+    .modal__changePasswordForm__form .label.align-right,
+    .modal__unlockForm__form .label.align-right {
+      text-align: right; }
+  .modal__setPasswordForm__form .input,
+  .modal__changePasswordForm__form .input,
+  .modal__unlockForm__form .input {
+    line-height: 115%;
+    width: 100%;
+    display: block;
+    padding: 8px;
+    border: 1px solid #dedede;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s; }
+    .modal__setPasswordForm__form .input:focus,
+    .modal__changePasswordForm__form .input:focus,
+    .modal__unlockForm__form .input:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: #0057E5; }
+    .modal__setPasswordForm__form .input.hidden,
+    .modal__changePasswordForm__form .input.hidden,
+    .modal__unlockForm__form .input.hidden {
+      display: none; }
+  .modal__setPasswordForm__form textarea,
+  .modal__changePasswordForm__form textarea,
+  .modal__unlockForm__form textarea {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 5em;
+    max-height: 320px; }
+  .modal__setPasswordForm__form fieldset:not(:last-child),
+  .modal__changePasswordForm__form fieldset:not(:last-child),
+  .modal__unlockForm__form fieldset:not(:last-child) {
+    margin-bottom: 18px; }
+  .modal__setPasswordForm__form select.input,
+  .modal__changePasswordForm__form select.input,
+  .modal__unlockForm__form select.input {
+    padding: 7px 8px; }
+  .modal__setPasswordForm__form .input--checkbox,
+  .modal__changePasswordForm__form .input--checkbox,
+  .modal__unlockForm__form .input--checkbox {
+    margin: 1px 8px 1px 0; }
+  .modal__setPasswordForm__form .button,
+  .modal__changePasswordForm__form .button,
+  .modal__unlockForm__form .button {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer; }
+    .modal__setPasswordForm__form .button--block,
+    .modal__changePasswordForm__form .button--block,
+    .modal__unlockForm__form .button--block {
+      display: block;
+      width: 100%; }
+  .modal__setPasswordForm__form .helper-block,
+  .modal__changePasswordForm__form .helper-block,
+  .modal__unlockForm__form .helper-block {
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.5; }
+    .modal__setPasswordForm__form .helper-block:first-line,
+    .modal__changePasswordForm__form .helper-block:first-line,
+    .modal__unlockForm__form .helper-block:first-line {
+      line-height: 1; }
+    .modal__setPasswordForm__form .helper-block p:not(:last-child),
+    .modal__changePasswordForm__form .helper-block p:not(:last-child),
+    .modal__unlockForm__form .helper-block p:not(:last-child) {
+      margin-bottom: 0.5em; }
+    .modal__setPasswordForm__form .helper-block a,
+    .modal__changePasswordForm__form .helper-block a,
+    .modal__unlockForm__form .helper-block a {
+      color: #66a0ff; }
+      .modal__setPasswordForm__form .helper-block a:hover,
+      .modal__changePasswordForm__form .helper-block a:hover,
+      .modal__unlockForm__form .helper-block a:hover {
+        text-decoration: underline; }
+  .modal__setPasswordForm__form .notice:not(:last-child),
+  .modal__changePasswordForm__form .notice:not(:last-child),
+  .modal__unlockForm__form .notice:not(:last-child) {
+    margin-bottom: 18px; }
+
+.modal__about {
+  font-size: 14px;
+  line-height: 1.33; }
+  .modal__about p:not(:last-child) {
+    margin-bottom: 18px; }
+  .modal__about p a {
+    color: #0057E5; }
+    .modal__about p a:hover {
+      text-decoration: underline; }
+
+.wallet__tx__actionbar {
+  flex: none;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #dedede; }
+
+.wallet__tabselector {
+  flex: none;
+  display: flex;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #dedede; }
+  .wallet__tabselector a {
+    flex: 1;
+    flex-grow: 1;
+    padding: 12px 18px;
+    width: 50%;
+    display: block;
+    text-align: center; }
+    .wallet__tabselector a:not(:last-child) {
+      border-right: 1px solid #e8e8e8; }
+    .wallet__tabselector a.active {
+      color: #0057E5; }
+
+.modal__addressDetails {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 100%;
+  font-size: 13px;
+  margin: 0; }
+  .modal__addressDetails .modal__addressDetails__header {
+    padding: 12px 18px;
+    border-bottom: 1px solid #dedede;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px; }
+  .modal__addressDetails .modal__addressDetails__content {
+    padding: 18px; }
+  .modal__addressDetails .modal__addressDetails__header {
+    background-color: #0057e5;
+    color: #fff;
+    border: none;
+    position: relative; }
+  .modal__addressDetails .modalCloseButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px; }
+    .modal__addressDetails .modalCloseButton:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .modal__addressDetails .addressDetailsForm {
+    font-size: inherit; }
+    .modal__addressDetails .addressDetailsForm fieldset .form-group-collection {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+    .modal__addressDetails .addressDetailsForm fieldset.state--multichild .form-group-collection > li:not(:last-child) {
+      margin-bottom: 18px; }
+    .modal__addressDetails .addressDetailsForm fieldset.state--multichild .form-group:not(:last-child) {
+      margin-bottom: 6px; }
+    .modal__addressDetails .addressDetailsForm fieldset.state--multichild .advice {
+      top: -3px; }
+    .modal__addressDetails .addressDetailsForm .form-group:not(:last-child) {
+      margin-bottom: 18px; }
+    .modal__addressDetails .addressDetailsForm .form-group:not(.wAppendix) .row > .left {
+      width: 100%; }
+    .modal__addressDetails .addressDetailsForm .form-group:not(.wAppendix) .row > .right {
+      width: 100%; }
+    .modal__addressDetails .addressDetailsForm .form-group.wAppendix .row > .left {
+      width: 100%; }
+    .modal__addressDetails .addressDetailsForm .form-group.wAppendix .row > .right {
+      width: 100%; }
+    .modal__addressDetails .addressDetailsForm .form-group.wAppendix .row > .appendix {
+      width: 20%;
+      padding-left: 12px; }
+    .modal__addressDetails .addressDetailsForm .form-group [type="checkbox"] {
+      margin-top: 0;
+      margin-bottom: 0; }
+    .modal__addressDetails .addressDetailsForm .form-group .inputContainer > input {
+      padding-right: 40px !important; }
+    .modal__addressDetails .addressDetailsForm .form-group .input[readonly] .asis,
+    .modal__addressDetails .addressDetailsForm .form-group .input[disabled] .asis {
+      cursor: text; }
+    .modal__addressDetails .addressDetailsForm .form-group .input[readonly]:not(.asis),
+    .modal__addressDetails .addressDetailsForm .form-group .input[disabled]:not(.asis) {
+      background-color: #f6f6f6;
+      color: rgba(0, 0, 0, 0.5);
+      cursor: default; }
+      .modal__addressDetails .addressDetailsForm .form-group .input[readonly]:not(.asis):focus,
+      .modal__addressDetails .addressDetailsForm .form-group .input[disabled]:not(.asis):focus {
+        border-color: #888; }
+    .modal__addressDetails .addressDetailsForm .button {
+      line-height: 1;
+      border: none;
+      outline: none;
+      box-shadow: none; }
+      .modal__addressDetails .addressDetailsForm .button--primary {
+        background-color: #0057E5;
+        color: #fff; }
+        .modal__addressDetails .addressDetailsForm .button--primary:hover, .modal__addressDetails .addressDetailsForm .button--primary:focus {
+          background-color: #1970ff; }
+    .modal__addressDetails .addressDetailsForm .label,
+    .modal__addressDetails .addressDetailsForm .input {
+      font-size: 100%; }
+    .modal__addressDetails .addressDetailsForm .label {
+      line-height: 1;
+      width: 100%;
+      display: block;
+      text-align: left;
+      padding: 10px;
+      background-color: #f6f6f6;
+      font-weight: bold;
+      color: #002; }
+      .modal__addressDetails .addressDetailsForm .label.align-left {
+        text-align: left; }
+      .modal__addressDetails .addressDetailsForm .label.align-right {
+        text-align: right; }
+    .modal__addressDetails .addressDetailsForm .input {
+      line-height: 115%;
+      width: 100%;
+      display: block;
+      padding: 8px;
+      border: 1px solid #dedede;
+      transition: border-color 0.3s, color 0.3s, background-color 0.3s; }
+      .modal__addressDetails .addressDetailsForm .input:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #0057E5; }
+      .modal__addressDetails .addressDetailsForm .input.hidden {
+        display: none; }
+    .modal__addressDetails .addressDetailsForm textarea {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      min-height: 5em;
+      max-height: 320px; }
+    .modal__addressDetails .addressDetailsForm fieldset:not(:last-child) {
+      margin-bottom: 18px; }
+    .modal__addressDetails .addressDetailsForm select.input {
+      padding: 7px 8px; }
+    .modal__addressDetails .addressDetailsForm .input--checkbox {
+      margin: 1px 8px 1px 0; }
+    .modal__addressDetails .addressDetailsForm .button {
+      padding: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer; }
+      .modal__addressDetails .addressDetailsForm .button--block {
+        display: block;
+        width: 100%; }
+    .modal__addressDetails .addressDetailsForm .helper-block {
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 1.5; }
+      .modal__addressDetails .addressDetailsForm .helper-block:first-line {
+        line-height: 1; }
+      .modal__addressDetails .addressDetailsForm .helper-block p:not(:last-child) {
+        margin-bottom: 0.5em; }
+      .modal__addressDetails .addressDetailsForm .helper-block a {
+        color: #66a0ff; }
+        .modal__addressDetails .addressDetailsForm .helper-block a:hover {
+          text-decoration: underline; }
+    .modal__addressDetails .addressDetailsForm .notice:not(:last-child) {
+      margin-bottom: 18px; }
+  .modal__addressDetails .qrCodeWrapper {
+    text-align: center;
+    margin-bottom: 18px; }
+    .modal__addressDetails .qrCodeWrapper a {
+      display: inline-block; }
+  .modal__addressDetails .inputContainer {
+    position: relative; }
+  .modal__addressDetails .inputAppendixButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 33px;
+    text-align: center;
+    background-color: #0057E5;
+    color: #fff;
+    line-height: 33px;
+    display: block;
+    cursor: pointer;
+    z-index: 1; }
+    .modal__addressDetails .inputAppendixButton:hover {
+      background-color: #1970ff; }
+
+.modal__newAddress {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 100%;
+  font-size: 13px;
+  margin: 0; }
+  .modal__newAddress .modal__newAddress__header {
+    padding: 12px 18px;
+    border-bottom: 1px solid #dedede;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px; }
+  .modal__newAddress .modal__newAddress__content {
+    padding: 0; }
+  .modal__newAddress .modalCloseButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px; }
+    .modal__newAddress .modalCloseButton:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .modal__newAddress .modal__newAddress__header {
+    background-color: #0057e5;
+    color: #fff;
+    border: none;
+    position: relative; }
+
+.modal__newAddress__form {
+  font-size: inherit; }
+  .modal__newAddress__form fieldset .form-group-collection {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .modal__newAddress__form fieldset.state--multichild .form-group-collection > li:not(:last-child) {
+    margin-bottom: 12px; }
+  .modal__newAddress__form fieldset.state--multichild .form-group:not(:last-child) {
+    margin-bottom: 4px; }
+  .modal__newAddress__form fieldset.state--multichild .advice {
+    top: -2px; }
+  .modal__newAddress__form .form-group:not(:last-child) {
+    margin-bottom: 12px; }
+  .modal__newAddress__form .form-group:not(.wAppendix) .row > .left {
+    width: 100%; }
+  .modal__newAddress__form .form-group:not(.wAppendix) .row > .right {
+    width: 100%; }
+  .modal__newAddress__form .form-group.wAppendix .row > .left {
+    width: 100%; }
+  .modal__newAddress__form .form-group.wAppendix .row > .right {
+    width: 100%; }
+  .modal__newAddress__form .form-group.wAppendix .row > .appendix {
+    width: 20%;
+    padding-left: 12px; }
+  .modal__newAddress__form .form-group [type="checkbox"] {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .modal__newAddress__form .form-group .inputContainer > input {
+    padding-right: 40px !important; }
+  .modal__newAddress__form .form-group .input[readonly] .asis,
+  .modal__newAddress__form .form-group .input[disabled] .asis {
+    cursor: text; }
+  .modal__newAddress__form .form-group .input[readonly]:not(.asis),
+  .modal__newAddress__form .form-group .input[disabled]:not(.asis) {
+    background-color: #f6f6f6;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: default; }
+    .modal__newAddress__form .form-group .input[readonly]:not(.asis):focus,
+    .modal__newAddress__form .form-group .input[disabled]:not(.asis):focus {
+      border-color: #888; }
+  .modal__newAddress__form .button {
+    line-height: 1;
+    border: none;
+    outline: none;
+    box-shadow: none; }
+    .modal__newAddress__form .button--primary {
+      background-color: #0057E5;
+      color: #fff; }
+      .modal__newAddress__form .button--primary:hover, .modal__newAddress__form .button--primary:focus {
+        background-color: #1970ff; }
+  .modal__newAddress__form .label,
+  .modal__newAddress__form .input {
+    font-size: 100%; }
+  .modal__newAddress__form .label {
+    line-height: 1;
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 10px;
+    background-color: #f6f6f6;
+    font-weight: bold;
+    color: #002; }
+    .modal__newAddress__form .label.align-left {
+      text-align: left; }
+    .modal__newAddress__form .label.align-right {
+      text-align: right; }
+  .modal__newAddress__form .input {
+    line-height: 115%;
+    width: 100%;
+    display: block;
+    padding: 8px;
+    border: 1px solid #dedede;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s; }
+    .modal__newAddress__form .input:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: #0057E5; }
+    .modal__newAddress__form .input.hidden {
+      display: none; }
+  .modal__newAddress__form textarea {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 5em;
+    max-height: 320px; }
+  .modal__newAddress__form fieldset:not(:last-child) {
+    margin-bottom: 12px; }
+  .modal__newAddress__form select.input {
+    padding: 7px 8px; }
+  .modal__newAddress__form .input--checkbox {
+    margin: 1px 8px 1px 0; }
+  .modal__newAddress__form .button {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer; }
+    .modal__newAddress__form .button--block {
+      display: block;
+      width: 100%; }
+  .modal__newAddress__form .helper-block {
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.5; }
+    .modal__newAddress__form .helper-block:first-line {
+      line-height: 1; }
+    .modal__newAddress__form .helper-block p:not(:last-child) {
+      margin-bottom: 0.5em; }
+    .modal__newAddress__form .helper-block a {
+      color: #66a0ff; }
+      .modal__newAddress__form .helper-block a:hover {
+        text-decoration: underline; }
+  .modal__newAddress__form .notice:not(:last-child) {
+    margin-bottom: 12px; }
+  .modal__newAddress__form .inputContainer {
+    position: relative; }
+  .modal__newAddress__form .inputAppendixButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 33px;
+    text-align: center;
+    background-color: #0057E5;
+    color: #fff;
+    line-height: 33px;
+    display: block;
+    cursor: pointer;
+    z-index: 1; }
+    .modal__newAddress__form .inputAppendixButton:hover {
+      background-color: #1970ff; }
+  .modal__newAddress__form .multisigKeysFieldsetCollection {
+    padding: 18px;
+    border: 1px solid #e5efff; }
+    .modal__newAddress__form .multisigKeysFieldsetCollection legend {
+      color: #002;
+      padding: 0 10px;
+      font-size: 13px;
+      font-weight: bold;
+      display: block; }
+    .modal__newAddress__form .multisigKeysFieldsetCollection .form-group-collection {
+      counter-reset: section; }
+      .modal__newAddress__form .multisigKeysFieldsetCollection .form-group-collection > li {
+        list-style-type: none;
+        position: relative; }
+
+.typeSelectElementProxy .icon {
+  line-height: 31px; }
+
+.modal__txSignForm {
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 100%;
+  font-size: 13px;
+  margin: 0; }
+  .modal__txSignForm .modal__txSignForm__header {
+    padding: 12px 18px;
+    border-bottom: 1px solid #dedede;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px; }
+  .modal__txSignForm .modal__txSignForm__content {
+    padding: 0 !important; }
+  .modal__txSignForm .modal--std__content {
+    padding: 0 !important; }
+  .modal__txSignForm .modal__txSignForm__header {
+    background-color: #0057e5;
+    color: #fff;
+    border: none;
+    position: relative; }
+  .modal__txSignForm .modalCloseButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px; }
+    .modal__txSignForm .modalCloseButton:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .modal__txSignForm .signTransactionForm {
+    font-size: inherit;
+    padding: 18px; }
+    .modal__txSignForm .signTransactionForm fieldset .form-group-collection {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+    .modal__txSignForm .signTransactionForm fieldset.state--multichild .form-group-collection > li:not(:last-child) {
+      margin-bottom: 18px; }
+    .modal__txSignForm .signTransactionForm fieldset.state--multichild .form-group:not(:last-child) {
+      margin-bottom: 6px; }
+    .modal__txSignForm .signTransactionForm fieldset.state--multichild .advice {
+      top: -3px; }
+    .modal__txSignForm .signTransactionForm .form-group:not(:last-child) {
+      margin-bottom: 18px; }
+    .modal__txSignForm .signTransactionForm .form-group:not(.wAppendix) .row > .left {
+      width: 100%; }
+    .modal__txSignForm .signTransactionForm .form-group:not(.wAppendix) .row > .right {
+      width: 100%; }
+    .modal__txSignForm .signTransactionForm .form-group.wAppendix .row > .left {
+      width: 100%; }
+    .modal__txSignForm .signTransactionForm .form-group.wAppendix .row > .right {
+      width: 100%; }
+    .modal__txSignForm .signTransactionForm .form-group.wAppendix .row > .appendix {
+      width: 20%;
+      padding-left: 12px; }
+    .modal__txSignForm .signTransactionForm .form-group [type="checkbox"] {
+      margin-top: 0;
+      margin-bottom: 0; }
+    .modal__txSignForm .signTransactionForm .form-group .inputContainer > input {
+      padding-right: 40px !important; }
+    .modal__txSignForm .signTransactionForm .form-group .input[readonly] .asis,
+    .modal__txSignForm .signTransactionForm .form-group .input[disabled] .asis {
+      cursor: text; }
+    .modal__txSignForm .signTransactionForm .form-group .input[readonly]:not(.asis),
+    .modal__txSignForm .signTransactionForm .form-group .input[disabled]:not(.asis) {
+      background-color: #f6f6f6;
+      color: rgba(0, 0, 0, 0.5);
+      cursor: default; }
+      .modal__txSignForm .signTransactionForm .form-group .input[readonly]:not(.asis):focus,
+      .modal__txSignForm .signTransactionForm .form-group .input[disabled]:not(.asis):focus {
+        border-color: #888; }
+    .modal__txSignForm .signTransactionForm .button {
+      line-height: 1;
+      border: none;
+      outline: none;
+      box-shadow: none; }
+      .modal__txSignForm .signTransactionForm .button--primary {
+        background-color: #0057E5;
+        color: #fff; }
+        .modal__txSignForm .signTransactionForm .button--primary:hover, .modal__txSignForm .signTransactionForm .button--primary:focus {
+          background-color: #1970ff; }
+    .modal__txSignForm .signTransactionForm .label,
+    .modal__txSignForm .signTransactionForm .input {
+      font-size: 100%; }
+    .modal__txSignForm .signTransactionForm .label {
+      line-height: 1;
+      width: 100%;
+      display: block;
+      text-align: left;
+      padding: 10px;
+      background-color: #f6f6f6;
+      font-weight: bold;
+      color: #002; }
+      .modal__txSignForm .signTransactionForm .label.align-left {
+        text-align: left; }
+      .modal__txSignForm .signTransactionForm .label.align-right {
+        text-align: right; }
+    .modal__txSignForm .signTransactionForm .input {
+      line-height: 115%;
+      width: 100%;
+      display: block;
+      padding: 8px;
+      border: 1px solid #dedede;
+      transition: border-color 0.3s, color 0.3s, background-color 0.3s; }
+      .modal__txSignForm .signTransactionForm .input:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #0057E5; }
+      .modal__txSignForm .signTransactionForm .input.hidden {
+        display: none; }
+    .modal__txSignForm .signTransactionForm textarea {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      min-height: 5em;
+      max-height: 320px; }
+    .modal__txSignForm .signTransactionForm fieldset:not(:last-child) {
+      margin-bottom: 18px; }
+    .modal__txSignForm .signTransactionForm select.input {
+      padding: 7px 8px; }
+    .modal__txSignForm .signTransactionForm .input--checkbox {
+      margin: 1px 8px 1px 0; }
+    .modal__txSignForm .signTransactionForm .button {
+      padding: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer; }
+      .modal__txSignForm .signTransactionForm .button--block {
+        display: block;
+        width: 100%; }
+    .modal__txSignForm .signTransactionForm .helper-block {
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 1.5; }
+      .modal__txSignForm .signTransactionForm .helper-block:first-line {
+        line-height: 1; }
+      .modal__txSignForm .signTransactionForm .helper-block p:not(:last-child) {
+        margin-bottom: 0.5em; }
+      .modal__txSignForm .signTransactionForm .helper-block a {
+        color: #66a0ff; }
+        .modal__txSignForm .signTransactionForm .helper-block a:hover {
+          text-decoration: underline; }
+    .modal__txSignForm .signTransactionForm .notice:not(:last-child) {
+      margin-bottom: 18px; }
+  .modal__txSignForm .stepsbar .breadcrumbs {
+    list-style: none;
+    font-size: 14px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    padding: 0 18px; }
+    .modal__txSignForm .stepsbar .breadcrumbs:after {
+      content: "";
+      clear: both;
+      display: table; }
+    .modal__txSignForm .stepsbar .breadcrumbs li {
+      float: left;
+      opacity: 0.5;
+      transition: all 0.2s; }
+      .modal__txSignForm .stepsbar .breadcrumbs li.active {
+        opacity: 1; }
+      .modal__txSignForm .stepsbar .breadcrumbs li:not(:last-child) {
+        margin-right: 12px; }
+        .modal__txSignForm .stepsbar .breadcrumbs li:not(:last-child) a:after {
+          content: "\2192";
+          float: right;
+          margin-left: 12px;
+          color: rgba(0, 45, 148, 0.5); }
+      .modal__txSignForm .stepsbar .breadcrumbs li a {
+        cursor: default;
+        font-weight: bold;
+        display: block;
+        padding: 14px 0;
+        color: #002d94; }
+  .modal__txSignForm .steps__content {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden; }
+  .modal__txSignForm .steps__slider {
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.2s;
+    left: 0%; }
+    .modal__txSignForm .steps__slider.signed {
+      left: -100%; }
+  .modal__txSignForm .step__content {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: initial; }
+    .modal__txSignForm .step__content.discard {
+      height: 1px;
+      overflow: hidden; }
+  .modal__txSignForm .actionbar .right {
+    text-align: right; }
+  .modal__txSignForm .userCheckList {
+    list-style: none; }
+    .modal__txSignForm .userCheckList li {
+      border-style: solid;
+      border-color: #dedede;
+      border-width: 1px 1px 0 1px; }
+      .modal__txSignForm .userCheckList li:last-child {
+        border-bottom-width: 1px; }
+    .modal__txSignForm .userCheckList label {
+      cursor: pointer; }
+    .modal__txSignForm .userCheckList .header {
+      background-color: #f6f6f6;
+      border-bottom: 1px solid #dedede;
+      display: flex;
+      align-items: center;
+      font-weight: bold; }
+    .modal__txSignForm .userCheckList .id {
+      padding: 10px;
+      border-right: 1px solid #dedede;
+      border-radius: 50%; }
+    .modal__txSignForm .userCheckList .title {
+      padding: 10px;
+      flex-grow: 1; }
+    .modal__txSignForm .userCheckList .checkbox {
+      padding: 10px; }
+      .modal__txSignForm .userCheckList .checkbox [type="checkbox"] {
+        margin: 0;
+        padding: 0; }
+    .modal__txSignForm .userCheckList .content {
+      padding: 10px;
+      border-top: 0;
+      max-height: 320px;
+      transition: padding 0.2s, max-height 0.2s, height 0.2s, border 0.2s;
+      white-space: initial;
+      line-height: 1.5;
+      border-bottom: none;
+      overflow: auto; }
+      .modal__txSignForm .userCheckList .content a {
+        color: #002d94; }
+        .modal__txSignForm .userCheckList .content a:hover {
+          text-decoration: underline; }
+      .modal__txSignForm .userCheckList .content kbd,
+      .modal__txSignForm .userCheckList .content mark {
+        background-color: #f6f6f6;
+        border: 1px solid #dedede;
+        padding: 1px 3px;
+        border-radius: 2px;
+        font-weight: bold; }
+      .modal__txSignForm .userCheckList .content p:not(:last-child) {
+        margin-bottom: 10px; }
+      .modal__txSignForm .userCheckList .content p.note {
+        color: rgba(0, 0, 0, 0.5);
+        border-left: 2px solid #dedede;
+        padding-left: 10px;
+        padding-right: 20px; }
+    .modal__txSignForm .userCheckList li.completed .content {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      overflow: hidden; }
+    .modal__txSignForm .userCheckList li.completed .title {
+      text-decoration: line-through; }
+    .modal__txSignForm .userCheckList li.completed .header {
+      border-bottom: none; }
+    .modal__txSignForm .userCheckList li.completed:not(:last-child) {
+      border-bottom: none; }
+
+/*# sourceMappingURL=style.css.map */
