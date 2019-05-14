@@ -5,7 +5,7 @@ const UglifyEsPlugin = require('uglify-es-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './app-main.jsx'
+    main: './app-main.js'
   },
   output: {
     filename: 'app-[name].bundle.js',
