@@ -1,3 +1,5 @@
+require("@babel/polyfill");
+
 var path = require('path');
 
 // const MinifyPlugin = require("babel-minify-webpack-plugin");
@@ -5,7 +7,10 @@ const UglifyEsPlugin = require('uglify-es-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './app-main.js'
+    main: [
+    	'@babel/polyfill', 
+    	'./app-main.js'
+	]
   },
   output: {
     filename: 'app-[name].bundle.js',
@@ -37,18 +42,21 @@ module.exports = {
   	rules: [
 	    {
 	      test: /\.m?(js|jsx)$/,
-	      exclude: /(node_modules|bower_components)/,
+	      // exclude: /(node_modules|bower_components)/,
 	      use: {
 	        loader: 'babel-loader',
 	        options: {
 	          presets: [
-	          	['@babel/preset-env', {
+	          	['@babel/preset-react', {
 	          		"targets": {
 			          "node": true
 			        }
-	          	}]
+	          	}],
+	          	["@babel/preset-env"]
 	          ],
-	          plugins: ['@babel/plugin-transform-react-jsx']
+	          plugins: [
+	          	['@babel/plugin-transform-react-jsx']
+      		  ]
 	        }
 	      }
 	    }
